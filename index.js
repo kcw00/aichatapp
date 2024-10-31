@@ -8,6 +8,10 @@ const openai = new OpenAI({
   });
 const app = express();
 
+// gpt-4o model does not exist -> try below codes to see my available models
+//const models = await openai.models.list();
+//console.log(models.data); // This will log all available models
+
 app.use(express.static('frontend/dist')); // say use this landing page to the backend (express)
 app.use(express.json());
 app.use(express.urlencoded({ extended: true })); // derive data that received from frontend
@@ -17,13 +21,9 @@ app.get('/:userQuestion', async(req, res) => { // await -> async function
     var userQuestion = req.params.userQuestion;
     // call open ai api
     const completion = await openai.chat.completions.create({
-        model: "gpt-4o",
+        model: "gpt-4o-mini",
         messages: [
             { role: "system", content: userQuestion },
-            {
-                role: "user",
-                content: "Write a haiku about recursion in programming.",
-            },
         ],
     });
 
