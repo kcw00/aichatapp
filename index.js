@@ -17,11 +17,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true })); // derive data that received from frontend
 
 // express route to support questions from the frontend
-app.get('/:userQuestion', async(req, res) => { // await -> async function
+app.post('/:userQuestion', async(req, res) => { // await -> async function
     var userQuestion = req.params.userQuestion;
     // call open ai api
     const completion = await openai.chat.completions.create({
-        model: "gpt-4o-mini",
+        model: "gpt-3.5-turbo",
         messages: [
             { role: "system", content: userQuestion },
         ],
