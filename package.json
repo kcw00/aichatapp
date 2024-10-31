@@ -10,5 +10,9 @@
   "keywords": [],
   "author": "Chaewon Kim",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "express": "^4.21.1",
+    "openai": "^4.69.0"
+  }
 }
