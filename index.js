@@ -1,0 +1,36 @@
+import express from "express";
+
+import OpenAI from "openai";
+
+
+const openai = new OpenAI({
+    apiKey: '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'
+  });
+const app = express();
+
+app.use(express.static('frontend/dist')); // say use this landing page to the backend (express)
+app.use(express.json());
+app.use(express.urlencoded({ extended: true })); // derive data that received from frontend
+
+// express route to support questions from the frontend
+app.post('/:userQuestion', async(req, res) => { // await -> async function
+    var userQuestion = req.params.userQuestion;
+    // call open ai api
+    const completion = await openai.chat.completions.create({
+        model: "gpt-4o",
+        messages: [
+            { role: "system", content: userQuestion },
+            {
+                role: "user",
+                content: "Write a haiku about recursion in programming.",
+            },
+        ],
+    });
+
+    res.json(completion.choices[0].message.content); // text data send back
+});
+
+app.listen(3000, () => {
+    console.log('Express Server running on http://localhost:3000');
+})
+
