@@ -20,8 +20,8 @@ function App() {
     document.body.className = isDarkMode ? 'bg-dark text-light' : 'bg-light text-dark';
   }, [isDarkMode]);
 
-  async function handleSubmit(evt) {
-    evt.preventDefault(); // Prevent default form submission behavior
+  async function handleSubmit(event) {
+    event.preventDefault(); // Prevent default form submission behavior
     if (input.trim()) {
       // Add user message to messages array
       setMessages([...messages, { text: input, sender: 'user' }]);
@@ -50,7 +50,6 @@ function App() {
   return (
     <div className={`app-container d-flex flex-column vh-100 ${isDarkMode ? 'bg-dark text-light' : 'bg-light text-dark'}`}>
       <header className="py-3 d-flex justify-content-between align-items-center">
-        <h1>AI Chatbot</h1>
         <button onClick={toggleTheme} className="btn btn-outline-light">
           {isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
         </button>

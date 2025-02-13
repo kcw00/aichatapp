@@ -12,7 +12,7 @@ const app = express();
 //const models = await openai.models.list();
 //console.log(models.data); // This will log all available models
 
-app.use(express.static('frontend/dist')); // say use this landing page to the backend (express)
+app.use(express.static('dist')); // 'use this landing page' to the backend (express)
 app.use(express.json());
 app.use(express.urlencoded({ extended: true })); // derive data that received from frontend
 
