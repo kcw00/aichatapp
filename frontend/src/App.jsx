@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.min.js'
-// do post to the backend
+import 'bootstrap-icons/font/bootstrap-icons.css';
 import axios from 'axios'
 import './index.css'
 
@@ -49,9 +49,9 @@ function App() {
 
   return (
     <div className={`app-container d-flex flex-column vh-100 ${isDarkMode ? 'bg-dark text-light' : 'bg-light text-dark'}`}>
-      <header className="py-3 d-flex justify-content-between align-items-center">
-        <button onClick={toggleTheme} className="btn btn-outline-light">
-          {isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+      <header className="py-3 d-flex justify-content-between align-items-center px-3">
+        <button onClick={toggleTheme} className="btn btn-secondary visible">
+          {isDarkMode ? 'Light Mode' : 'Dark Mode'}
         </button>
       </header>
 
@@ -79,8 +79,8 @@ function App() {
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => e.key === 'Enter' && handleSubmit(e)} // Call handleSubmit on Enter
         />
-        <button type="submit" className="btn btn-primary">
-          <i className="bi bi-arrow-right-circle-fill"></i> {/* Bootstrap arrow icon */}
+        <button type="submit" className="btn btn-primary btn-lg d-flex align-items-center">
+          <i className="bi bi-arrow-right-circle-fill me-1"></i> {/* Bootstrap arrow icon */}
         </button>
       </form>
     </div>
