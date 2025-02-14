@@ -19,6 +19,7 @@ body.bg-dark {
 button {
   z-index: 1000; /* Ensure the button appears above other elements */
   opacity: 1; 
+  color: darkgreen
 }
 
 /* Message List */
@@ -43,6 +44,12 @@ button {
   position: sticky;
   bottom: 0;
   background-color: #f8f9fa;
+}
+
+/* Place Holder */
+*::placeholder {
+  color: #b1bbc4 !important;
+  opacity: 1;
 }
 
 /* Button Icon Styling */
