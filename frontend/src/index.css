@@ -1,10 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Roboto+Condensed:wght@400;700&display=swap");
 
-.app-container {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-}
+
 
 /* Dark and Light Modes */
 body.bg-dark {
@@ -56,4 +52,123 @@ button {
 .btn i {
   font-size: 1.5em;
   opacity: 1;
+}
+
+/* Full page layout */
+.main-container {
+  display: flex;
+  height: 100vh;
+  background-color: #343541;
+  color: white;
+}
+
+/* Sidebar styles */
+.sidebar {
+  width: 264px;
+  height: 100%;
+  background-color: #202123;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease-in-out;
+  overflow-x: hidden;
+}
+
+.sidebar.collapsed {
+  width: 0px;
+}
+
+.sidebar.collapsed .sidebar-logo h3 {
+  display: none;
+}
+
+.sidebar.collapsed .sidebar-header {
+  display: none;
+}
+
+.sidebar.collapsed .sidebar-link {
+  text-align: center;
+  padding: 10px;
+  font-size: 1.5rem;
+}
+
+/* Sidebar Logo */
+.sidebar-logo {
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+/* Sidebar Navigation */
+.sidebar-nav {
+  flex: 1;
+  padding: 0;
+}
+
+.sidebar-header {
+  padding: 10px 20px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #a1a1a1;
+}
+
+.sidebar-link {
+  display: block;
+  padding: 12px 20px;
+  color: white;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background 0s ease-in-out;
+}
+
+.sidebar-link:hover {
+  background-color: #aeb2bf;
+  border-radius: 5px;
+}
+
+/* Main content area */
+.content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+/* Navbar and Toggler Button */
+.navbar {
+  padding: 15px;
+  background: #343541;
+  border-bottom: 2px solid #474A50;
+}
+
+.toggler-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.75rem;
+  cursor: pointer;
+}
+
+.toggler-btn:hover {
+  opacity: 0.8;
+}
+
+/* Chat area */
+.chat-area {
+  padding: 20px;
+}
+
+/* Responsive Behavior */
+@media (max-width: 768px) {
+  .sidebar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+  }
+
+  .sidebar.collapsed {
+    margin-left: -400px;
+  }
 }
