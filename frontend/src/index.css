@@ -30,6 +30,8 @@ button {
 }
 .message .bg-primary {
   border-radius: 15px 15px 0px 15px;
+  background-color: #343541;
+  color: white;
 }
 .message .bg-secondary {
   border-radius: 15px 15px 15px 0px;
@@ -117,7 +119,7 @@ button {
   display: block;
   padding: 12px 20px;
   color: white;
-  font-size: 1rem;
+  font-size: 0.85rem;
   text-decoration: none;
   transition: background 0s ease-in-out;
 }
@@ -135,23 +137,17 @@ button {
   overflow-y: auto;
 }
 
-/* Navbar and Toggler Button */
-.navbar {
-  padding: 15px;
-  background: #343541;
-  border-bottom: 2px solid #474A50;
-}
-
+/* Sidebar Button */
 .toggler-btn {
   background: none;
   border: none;
-  color: white;
+  color: rgb(106, 108, 111);
   font-size: 1.75rem;
   cursor: pointer;
 }
 
 .toggler-btn:hover {
-  opacity: 0.8;
+  opacity: 0.6;
 }
 
 /* Chat area */

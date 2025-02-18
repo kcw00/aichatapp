@@ -62,17 +62,14 @@ function App() {
 
   return (
     <div className={`main-container d-flex vh-100 ${switchMode}`}>
-      <Sidebar isCollapsed={togglable}/>
+      <Sidebar isCollapsed={togglable} />
       <div className="content">
 
         <div className="d-flex flex-column flex-grow-1">
           <header className="py-3 d-flex justify-content-between align-items-center px-3">
-
-            <nav className="navbar">
-              <button className="toggler-btn" onClick={toggleSidebar}>
-                <i class="bi bi-justify"></i>
-              </button>
-            </nav>
+            <button className="toggler-btn" onClick={toggleSidebar}>
+              <i class="bi bi-layout-text-sidebar"></i>
+            </button>
             <button onClick={toggleTheme} className="btn btn-secondary ms-auto">
               {isDarkMode ? 'Light Mode' : 'Dark Mode'}
             </button>
@@ -105,8 +102,8 @@ function App() {
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && handleSubmit(e)} // Call handleSubmit on Enter
             />
-            <button type="submit" className="btn btn-primary btn-lg d-flex align-items-center">
-              <i className="bi bi-arrow-right-circle-fill me-1"></i> {/* Bootstrap arrow icon */}
+            <button type="submit" className="btn btn-primary d-flex align-items-center">
+              <i className="bi bi-arrow-right-circle-fill me-1"></i>
             </button>
           </form>
         </div>
