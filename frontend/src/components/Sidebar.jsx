@@ -1,10 +1,8 @@
-
-function Sidebar({ isCollapsed }) {
-
+const Sidebar = ({ isCollapsed, theme }) =>{
 
     return (
         <div className="d-flex">
-            <aside className={`sidebar ${isCollapsed}`}>
+            <aside className={`sidebar ${isCollapsed} ${theme}`}>
                 <div className="sidebar-logo">
                     <h3>AI CHAT</h3>
                 </div>
@@ -22,9 +20,9 @@ function Sidebar({ isCollapsed }) {
                 </ul>
             </aside>
         </div>
-    );
+    )
 }
 
-export default Sidebar;
+export default Sidebar
 
 

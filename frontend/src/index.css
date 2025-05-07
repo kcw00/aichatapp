@@ -2,16 +2,6 @@
 
 
 
-/* Dark and Light Modes */
-body.bg-dark {
-  background-color: #1e1e2f !important;
-  color: #e0e0e0 !important;
-}
-
-.app-container.bg-dark {
-  background-color: #121212 !important;
-}
-
 button {
   z-index: 1000; /* Ensure the button appears above other elements */
   opacity: 1; 
@@ -71,7 +61,7 @@ button {
   background-color: #202123;
   display: flex;
   flex-direction: column;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
   overflow-x: hidden;
 }
 
@@ -105,6 +95,7 @@ button {
 .sidebar-nav {
   flex: 1;
   padding: 0;
+  z-index: 1;
 }
 
 .sidebar-header {
@@ -118,7 +109,7 @@ button {
 .sidebar-link {
   display: block;
   padding: 12px 20px;
-  color: white;
+  color: #a1a1a1;
   font-size: 0.85rem;
   text-decoration: none;
   transition: background 0s ease-in-out;
