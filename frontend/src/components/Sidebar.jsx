@@ -9,7 +9,7 @@ const Sidebar = ({ isCollapsed, theme, toggleTheme }) => {
                     <h3>AI CHAT</h3>
                 </div>
                 <div className="sidebar-menu">
-                    <a href="#" className="sidebar-link">About</a>
+                    <a href="https://github.com/kcw00/aichatapp" className="sidebar-link">About</a>
                     <a onClick={toggleTheme} className="sidebar-link">
                         {themeIcon}
                         <label>{theme ? 'Light Mode' : 'Dark Mode'}</label>

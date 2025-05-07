@@ -79,8 +79,10 @@
   background-color: #e2e3e4;
   display: flex;
   flex-direction: column;
-  transition: all 0.2s ease-out allow-discrete;
+  transition: all 0.4s ease;
   overflow-x: hidden;
+  white-space: nowrap;
+  position: relative;
 }
 
 .sidebar::-webkit-scrollbar {
@@ -112,9 +114,7 @@
 }
 
 .sidebar.collapsed .sidebar-link {
-  text-align: center;
-  padding: 10px;
-  font-size: 1.5rem;
+  display: none;
 }
 
 /* Sidebar Logo */
@@ -146,7 +146,6 @@
   color: #a1a1a1;
   font-size: 0.85rem;
   text-decoration: none;
-  transition: background 0s ease-in-out;
 }
 
 .sidebar-link:hover {

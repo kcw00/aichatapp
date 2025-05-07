@@ -64,7 +64,7 @@ const ChatArea = () => {
             <Sidebar isCollapsed={togglable} theme={sidebarMode} toggleTheme={toggleTheme} />
 
             <div className="content">
-                
+
                 <div className="d-flex flex-column flex-grow-1">
                     <header className="py-3 d-flex justify-content-between align-items-center px-3">
                         <button className="toggler-btn" onClick={toggleSidebar}>
