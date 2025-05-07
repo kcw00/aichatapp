@@ -1,4 +1,6 @@
-const Sidebar = ({ isCollapsed, theme }) =>{
+const Sidebar = ({ isCollapsed, theme, toggleTheme }) => {
+
+    const themeIcon = theme ? <i class="bi bi-sun me-2"></i> : <i class="bi bi-sun-fill me-2"></i>
 
     return (
         <div className="d-flex">
@@ -6,18 +8,13 @@ const Sidebar = ({ isCollapsed, theme }) =>{
                 <div className="sidebar-logo">
                     <h3>AI CHAT</h3>
                 </div>
-                <ul className="sidebar-nav">
-                    <li className="sidebar-header">Previous Chats</li>
-                    <li>
-                        <a href="#" className="sidebar-link">Chat 1</a>
-                    </li>
-                    <li>
-                        <a href="#" className="sidebar-link">Chat 2</a>
-                    </li>
-                    <li>
-                        <a href="#" className="sidebar-link">Chat 3</a>
-                    </li>
-                </ul>
+                <div className="sidebar-menu">
+                    <a href="#" className="sidebar-link">About</a>
+                    <a onClick={toggleTheme} className="sidebar-link">
+                        {themeIcon}
+                        <label>{theme ? 'Light Mode' : 'Dark Mode'}</label>
+                    </a>
+                </div>
             </aside>
         </div>
     )
