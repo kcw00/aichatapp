@@ -1,0 +1,82 @@
+# AIChat App
+
+A modern, responsive ai chat application built with **React**, **Node.js**, and **OpenAI's GPT-3.5-Turbo**.
+
+
+---
+
+## ✨ Features
+
+- 🔮 **GPT-3.5 Integration** via OpenAI API
+- 🎨 **Responsive UI** with Bootstrap 5 & Bootstrap Icons
+- 🌙 **Dark/Light Mode** toggle
+- 📩 **Real-time chat UI** with message bubbles and icons
+- 🧭 **Collapsible Sidebar** with smooth transitions
+- 🚀 **Proxy-enabled Backend Routing** via Vite
+- 🛡️ Secure API key handling with `.env`
+
+---
+
+## 🛠️ Tech Stack
+
+**Frontend:**
+- React (Vite)
+- Bootstrap 5 + Bootstrap Icons
+- Axios
+- Custom CSS transitions
+
+**Backend:**
+- Node.js / Express
+- OpenAI API (gpt-3.5-turbo)
+- CORS & Environment Config
+
+---
+
+## ⚙️ Getting Started
+
+### 🔧 Prerequisites
+- Node.js & npm
+- OpenAI API key ([Get one here](https://platform.openai.com/account/api-keys))
+
+### 🚀 Run Locally
+
+1. **Clone the repository**
+
+```bash
+git clone https://github.com/yourusername/aichat.git
+cd aichat
+```
+
+2. **Install dependencies**
+
+```bash
+cd frontend && npm install axios bootstrap bootstrap-icons esbuild react react-dom
+```
+```bash
+cd backend && npm install cors dotenv express openai
+```
+
+4. **Set up environment variables**
+
+`backend/.env`
+```bash
+OPENAI_API_KEY=your_openai_api_key_here
+```
+`frontend/.env`
+```bash
+VITE_BACKEND_URL=http://localhost:3000
+```
+
+6. **Start both backend and frontend**
+
+```bash
+cd frontend && npm run dev
+```
+```bash
+cd backend && npm run dev
+```
+
+8. **Open http://localhost:5173 in your browser.**
+
+---
+## 📸 Demo
