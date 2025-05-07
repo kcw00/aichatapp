@@ -40,7 +40,7 @@ const ChatArea = () => {
             setInput('')
 
             try {
-                const response = await axios.post(`http://localhost:3000/${input}`) // Use input as the question
+                const response = await axios.post(`/api/${input}`) // Use input as the question
                 console.log(JSON.stringify(response.data))
                 setAnswer(response.data) // the API returns the answer directly
 
@@ -68,7 +68,7 @@ const ChatArea = () => {
                 <div className="d-flex flex-column flex-grow-1">
                     <header className="py-3 d-flex justify-content-between align-items-center px-3">
                         <button className="toggler-btn" onClick={toggleSidebar}>
-                            {isCollapsed ? <i class="bi bi-layout-sidebar fs-3"></i> : <i class="bi bi-layout-split fs-3"></i>}
+                            {isCollapsed ? <i className="bi bi-layout-sidebar fs-3"></i> : <i className="bi bi-layout-split fs-3"></i>}
                         </button>
                     </header>
                 </div>
