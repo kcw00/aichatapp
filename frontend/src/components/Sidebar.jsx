@@ -1,6 +1,6 @@
 const Sidebar = ({ isCollapsed, theme, toggleTheme }) => {
 
-    const themeIcon = theme ? <i class="bi bi-sun me-2"></i> : <i class="bi bi-sun-fill me-2"></i>
+    const themeIcon = theme ? <i className="bi bi-sun me-2"></i> : <i className="bi bi-sun-fill me-2"></i>
 
     return (
         <div className="d-flex">
