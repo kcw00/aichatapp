@@ -1,41 +1,56 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Roboto+Condensed:wght@400;700&display=swap");
 
-.app-container {
+
+/* Full page layout */
+.main-container {
   display: flex;
-  flex-direction: column;
   height: 100vh;
+  background-color: #343541;
+  color: white;
 }
 
-/* Dark and Light Modes */
-body.bg-dark {
-  background-color: #1e1e2f !important;
-  color: #e0e0e0 !important;
+.main-container::-webkit-scrollbar {
+  width: 6px;
 }
 
-.app-container.bg-dark {
-  background-color: #121212 !important;
+.main-container::-webkit-scrollbar-track {
+  background-color: transparent;
 }
 
-button {
-  z-index: 1000; /* Ensure the button appears above other elements */
-  opacity: 1; 
+.main-container::-webkit-scrollbar-thumb {
+  background-color: var(--thumb-color, #999);
+  border-radius: 4px;
+}
+
+/* Chat area */
+.chat-area {
+  padding: 20px;
+}
+
+/* Message Bubble Styles */
+.message-bubble {
+  max-width: 60%;
+  border-radius: 0.7rem;
+  position: relative;
+  font-size: 1rem;
+  word-wrap: break-word;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.user-bubble {
+  background-color: #0d6efd;
+  color: white;
+}
+
+.bot-bubble {
+  background-color: #6c757d;
+  color: white;
 }
 
 /* Message List */
 .message-list {
   overflow-y: auto;
   padding-bottom: 10px;
-}
-
-/* Message Bubble Styles */
-.message {
-  margin: 5px 0;
-}
-.message .bg-primary {
-  border-radius: 15px 15px 0px 15px;
-}
-.message .bg-secondary {
-  border-radius: 15px 15px 15px 0px;
 }
 
 /* Input Container */
@@ -45,7 +60,132 @@ button {
   background-color: #f8f9fa;
 }
 
+/* Place Holder */
+*::placeholder {
+  color: #b1bbc4 !important;
+  opacity: 1;
+}
+
 /* Button Icon Styling */
 .btn i {
   font-size: 1.5em;
+  opacity: 1;
+}
+
+/* Sidebar styles */
+.sidebar {
+  width: 264px;
+  height: 100%;
+  background-color: #e2e3e4;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s ease;
+  overflow-x: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+.sidebar::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: var(--thumb-color, #999);
+  border-radius: 4px;
+}
+
+.sidebar.dark {
+  background-color: #202123;
+  color: white;
+}
+
+.sidebar.collapsed {
+  width: 0px;
+}
+
+.sidebar.collapsed .sidebar-logo h3 {
+  display: none;
+}
+
+.sidebar.collapsed .sidebar-header {
+  display: none;
+}
+
+.sidebar.collapsed .sidebar-link {
+  display: none;
+}
+
+/* Sidebar Logo */
+.sidebar-logo {
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+/* Sidebar Navigation */
+.sidebar-nav {
+  flex: 1;
+  padding: 0;
+  z-index: 1;
+}
+
+.sidebar-header {
+  padding: 10px 20px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #a1a1a1;
+}
+
+.sidebar-link {
+  display: block;
+  padding: 12px 20px;
+  color: #a1a1a1;
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+
+.sidebar-link:hover {
+  background-color: #c3c6d1;
+  border-radius: 5px;
+}
+
+/* Sidebar Button */
+.toggler-btn {
+  background: none;
+  border: none;
+  color: rgb(106, 108, 111);
+  font-size: 1.75rem;
+  cursor: pointer;
+}
+
+.toggler-btn:hover {
+  opacity: 0.6;
+}
+
+
+/* Main content area */
+.content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+
+/* Responsive Behavior */
+@media (max-width: 768px) {
+  .sidebar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+  }
+
+  .sidebar.collapsed {
+    margin-left: -400px;
+  }
 }
