@@ -1,6 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Roboto+Condensed:wght@400;700&display=swap");
 
-/* Main Container */
+
+/* Full page layout */
+.main-container {
+  display: flex;
+  height: 100vh;
+  background-color: #343541;
+  color: white;
+}
+
 .main-container::-webkit-scrollbar {
   width: 6px;
 }
@@ -14,29 +22,35 @@
   border-radius: 4px;
 }
 
-button {
-  z-index: 1000; /* Ensure the button appears above other elements */
-  opacity: 1; 
-  color: darkgreen
+/* Chat area */
+.chat-area {
+  padding: 20px;
+}
+
+/* Message Bubble Styles */
+.message-bubble {
+  max-width: 60%;
+  border-radius: 0.7rem;
+  position: relative;
+  font-size: 1rem;
+  word-wrap: break-word;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.user-bubble {
+  background-color: #0d6efd;
+  color: white;
+}
+
+.bot-bubble {
+  background-color: #6c757d;
+  color: white;
 }
 
 /* Message List */
 .message-list {
   overflow-y: auto;
   padding-bottom: 10px;
-}
-
-/* Message Bubble Styles */
-.message {
-  margin: 5px 0;
-}
-.message .bg-primary {
-  border-radius: 15px 15px 0px 15px;
-  background-color: #343541;
-  color: white;
-}
-.message .bg-secondary {
-  border-radius: 15px 15px 15px 0px;
 }
 
 /* Input Container */
@@ -56,14 +70,6 @@ button {
 .btn i {
   font-size: 1.5em;
   opacity: 1;
-}
-
-/* Full page layout */
-.main-container {
-  display: flex;
-  height: 100vh;
-  background-color: #343541;
-  color: white;
 }
 
 /* Sidebar styles */
@@ -92,7 +98,6 @@ button {
   background-color: #202123;
   color: white;
 }
-
 
 .sidebar.collapsed {
   width: 0px;
@@ -171,11 +176,6 @@ button {
   overflow-y: auto;
 }
 
-
-/* Chat area */
-.chat-area {
-  padding: 20px;
-}
 
 /* Responsive Behavior */
 @media (max-width: 768px) {

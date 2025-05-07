@@ -60,9 +60,11 @@ const ChatArea = () => {
 
     return (
         <div className={`main-container d-flex vh-100 overflow-y-scroll ${switchMode}`}>
-            <Sidebar isCollapsed={togglable} theme={sidebarMode} toggleTheme={toggleTheme} />
-            <div className="content">
 
+            <Sidebar isCollapsed={togglable} theme={sidebarMode} toggleTheme={toggleTheme} />
+
+            <div className="content">
+                
                 <div className="d-flex flex-column flex-grow-1">
                     <header className="py-3 d-flex justify-content-between align-items-center px-3">
                         <button className="toggler-btn" onClick={toggleSidebar}>
@@ -70,6 +72,7 @@ const ChatArea = () => {
                         </button>
                     </header>
                 </div>
+
                 <div className="chat-area">
                     {/* Message List */}
                     <div className="message-list flex-grow-1 overflow-auto p-3">
@@ -82,7 +85,10 @@ const ChatArea = () => {
                                     <i className="bi bi-robot fs-5 me-2 align-self-center text-secondary"></i>
                                 )}
 
-                                <div className={`p-2 rounded ${message.sender === 'user' ? 'bg-primary text-light' : 'bg-secondary text-light'}`}>
+                                <div
+                                    className={`message-bubble px-3 py-2 position-relative ${message.sender === 'user' ? 'user-bubble' : 'bot-bubble'
+                                        }`}
+                                >
                                     {message.text}
                                 </div>
 
