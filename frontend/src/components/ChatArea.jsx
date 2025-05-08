@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import Sidebar from './SideBar'
+import Markdown from './Markdown/Markdown'
 
 const ChatArea = () => {
     const [isDarkMode, setIsDarkMode] = useState(false)
     const [messages, setMessages] = useState([])
     const [input, setInput] = useState('')
-    const [answer, setAnswer] = useState('') // State to hold the answer from the API
     const [isCollapsed, setIsCollapsed] = useState(true)
 
     const switchMode = isDarkMode ? 'bg-dark text-light' : 'bg-light text-dark'
     const togglable = isCollapsed ? "collapsed" : ""
-    const sidebarMode = isDarkMode ? "dark" : ""
+    const themeMode = isDarkMode ? "dark" : ""
 
 
     const toggleSidebar = () => {
@@ -41,14 +41,19 @@ const ChatArea = () => {
 
             try {
                 const response = await axios.post(`/api/${input}`) // Use input as the question
-                console.log(JSON.stringify(response.data))
-                setAnswer(response.data) // the API returns the answer directly
+                // console.log(JSON.stringify(response.data))
+                const rawText = response.data
+
+                // Optional: unescape if response is JSON-stringified string
+                const parsedText = typeof rawText === 'string'
+                    ? rawText.replace(/\\n/g, '\n').replace(/\\"/g, '"')
+                    : rawText
 
                 // Simulate bot response
                 setTimeout(() => {
                     setMessages(prevMessages => [
                         ...prevMessages,
-                        { text: response.data, sender: 'bot' }, // Display the bot response
+                        { text: parsedText, sender: 'bot' }, // Display the bot response
                     ]);
                 }, 500)
             } catch (error) {
@@ -61,7 +66,7 @@ const ChatArea = () => {
     return (
         <div className={`main-container d-flex vh-100 overflow-y-scroll ${switchMode}`}>
 
-            <Sidebar isCollapsed={togglable} theme={sidebarMode} toggleTheme={toggleTheme} />
+            <Sidebar isCollapsed={togglable} theme={themeMode} toggleTheme={toggleTheme} />
 
             <div className="content">
 
@@ -86,10 +91,16 @@ const ChatArea = () => {
                                 )}
 
                                 <div
-                                    className={`message-bubble px-3 py-2 position-relative ${message.sender === 'user' ? 'user-bubble' : 'bot-bubble'
-                                        }`}
+                                    className={`message-bubble px-3 py-2 position-relative ${message.sender === 'user' ? 'user-bubble' : 'bot-bubble'} ${themeMode}`}
                                 >
-                                    {message.text}
+                                    {message.sender === 'bot' ? (
+                                        <Markdown
+                                            content={message.text}
+                                            isDarkMode={isDarkMode}
+                                        />
+                                    ) : (
+                                        message.text
+                                    )}
                                 </div>
 
                                 {message.sender === 'user' && (

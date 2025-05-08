@@ -27,7 +27,7 @@
   padding: 20px;
 }
 
-/* Message Bubble Styles */
+/* Message Bubble */
 .message-bubble {
   max-width: 60%;
   border-radius: 0.7rem;
@@ -38,12 +38,22 @@
 }
 
 .user-bubble {
-  background-color: #0d6efd;
+  background-color: #6ea7fd;
+  color: rgb(4, 4, 4);
+}
+
+.user-bubble.dark {
+  background-color: #0162b1;
   color: white;
 }
 
 .bot-bubble {
-  background-color: #6c757d;
+  background-color: #a9aaab;
+  color: black;
+}
+
+.bot-bubble.dark{
+  background-color: #54595d;
   color: white;
 }
 
@@ -66,13 +76,13 @@
   opacity: 1;
 }
 
-/* Button Icon Styling */
+/* Button Icon */
 .btn i {
   font-size: 1.5em;
   opacity: 1;
 }
 
-/* Sidebar styles */
+/* Sidebar */
 .sidebar {
   width: 264px;
   height: 100%;
