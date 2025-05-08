@@ -12,6 +12,10 @@ A modern, responsive ai chat application built with **React**, **Node.js**, and 
 - 🌙 **Dark/Light Mode** toggle
 - 📩 **Real-time chat UI** with message bubbles and icons
 - 🧭 **Collapsible Sidebar** with smooth transitions
+- 💬 **Markdown support** with:
+  - Inline code
+  - Syntax-highlighted code blocks with language labels
+  - Copy-to-clipboard buttons for code blocks
 - 🚀 **Proxy-enabled Backend Routing** via Vite
 - 🛡️ Secure API key handling with `.env`
 
@@ -24,6 +28,7 @@ A modern, responsive ai chat application built with **React**, **Node.js**, and 
 - Bootstrap 5 + Bootstrap Icons
 - Axios
 - Custom CSS transitions
+- React markdown
 
 **Backend:**
 - Node.js / Express
@@ -79,4 +84,8 @@ cd backend && npm run dev
 8. **Open http://localhost:5173 in your browser.**
 
 ---
-## 📸 Demo
+## 📸 Live Demo
+
+![ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/e5c375a9-996f-4d68-a42d-c74ac524e976)
+
+
