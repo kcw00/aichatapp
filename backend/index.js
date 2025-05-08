@@ -31,7 +31,7 @@ app.post('/api/:userQuestion', async (req, res) => {
         ],
     })
 
-    console.log(completion)
+    // console.log(completion)
 
     res.json(completion.choices[0].message.content) // text data send back
 })
