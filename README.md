@@ -66,7 +66,9 @@ cd frontend && npm install axios bootstrap bootstrap-icons esbuild react react-d
 cd backend && npm install cors dotenv express openai
 ```
 
-4. **Set up environment variables**
+3. **Set up environment variables**
+
+Create `.env` file in both frontend and backend folder
 
 `backend/.env`
 ```bash
@@ -77,7 +79,7 @@ OPENAI_API_KEY=your_openai_api_key_here
 VITE_BACKEND_URL=http://localhost:3000
 ```
 
-6. **Start both backend and frontend**
+4. **Start both backend and frontend**
 
 ```bash
 cd frontend && npm run dev
@@ -86,7 +88,7 @@ cd frontend && npm run dev
 cd backend && npm run dev
 ```
 
-8. **Open http://localhost:5173 in your browser.**
+5. **Open http://localhost:5173 in your browser.**
 
 ---
 
