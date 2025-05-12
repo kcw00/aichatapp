@@ -4,6 +4,11 @@ A modern, responsive ai chat application built with **React**, **Node.js**, and 
 
 
 ---
+## 📸 Live Demo
+
+![ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/e5c375a9-996f-4d68-a42d-c74ac524e976)
+
+---
 
 ## ✨ Features
 
@@ -84,8 +89,4 @@ cd backend && npm run dev
 8. **Open http://localhost:5173 in your browser.**
 
 ---
-## 📸 Live Demo
-
-![ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/e5c375a9-996f-4d68-a42d-c74ac524e976)
-
 
