@@ -4,7 +4,7 @@ import remarkGfm from 'remark-gfm'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
-import './Markdown.css'
+import './markdown.css'
 
 const Markdown = ({ content, isDarkMode }) => {
   const [copiedCode, setCopiedCode] = useState(null)

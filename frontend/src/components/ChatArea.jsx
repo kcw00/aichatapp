@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import Sidebar from './SideBar'
+import Sidebar from './Sidebar'
 import Markdown from './Markdown/Markdown'
 
 const ChatArea = () => {
