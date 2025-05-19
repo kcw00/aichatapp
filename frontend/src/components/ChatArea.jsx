@@ -40,7 +40,7 @@ const ChatArea = () => {
             setInput('')
 
             try {
-                const response = await axios.post(`/api/${input}`) // Use input as the question
+                const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/${input}`,) // Use input as the question
                 // console.log(JSON.stringify(response.data))
                 const rawText = response.data
 
