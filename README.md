@@ -15,6 +15,7 @@ Try it here: https://aichatapp-rho.vercel.app/
 ## ✨ Features
 
 - 🔮 **GPT-3.5 Integration** via OpenAI API
+- 🌐 Backend hosted on **DigitalOcean**, frontend on **Vercel**
 - 🎨 **Responsive UI** with Bootstrap 5 & Bootstrap Icons
 - 🌙 **Dark/Light Mode** toggle
 - 📩 **Real-time chat UI** with message bubbles and icons
@@ -25,19 +26,20 @@ Try it here: https://aichatapp-rho.vercel.app/
   - Copy-to-clipboard buttons for code blocks
 - 🚀 **Proxy-enabled Backend Routing** via Vite
 - 🛡️ Secure API key handling with `.env`
+- ⚙️ Automated **CI/CD** pipeline using **GitHub Actions** for seamless deployment
 
 ---
 
 ## 🛠️ Tech Stack
 
-**Frontend(Deployed on Vercel):**
+**Frontend:**
 - React (Vite)
 - Bootstrap 5 + Bootstrap Icons
 - Axios
 - Custom CSS transitions
 - React markdown
 
-**Backend(Deployed on DigitalOcean):**
+**Backend:**
 - Node.js / Express
 - OpenAI API (gpt-3.5-turbo)
 - CORS & Environment Config
@@ -93,4 +95,24 @@ cd backend && npm run dev
 5. **Open http://localhost:5173 in your browser.**
 
 ---
+
+## CI/CD Pipeline
+
+This project is fully automated with a secure and reliable CI/CD setup using **GitHub Actions**.
+
+### Workflow Overview
+- **Frontend Deployment**: Automatically deployed to [Vercel](https://vercel.com/) after each successful merge to `main`.
+- **Backend Deployment**: Automatically deployed to a [DigitalOcean](https://www.digitalocean.com/) droplet using SSH and `pm2` after merging to `main`.
+
+### Branch Protection Rules
+To maintain code quality and production stability:
+- All changes must go through a **Pull Request**
+- **1 required review** must be approved before merging
+- **Stale PR approvals** are dismissed on new commits
+- The `main` branch **only allows merging after all GitHub Actions pass**
+
+### Required Check
+- `deploy.yml` must succeed before merging to `main`
+
+This ensures every change is reviewed, tested, and deployed automatically — keeping production up-to-date and safe.
 
