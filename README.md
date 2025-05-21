@@ -6,6 +6,8 @@ A modern, responsive ai chat application built with **React**, **Node.js**, and 
 ---
 ## 📸 Live Demo
 
+Try it here: https://aichatapp-rho.vercel.app/
+
 ![ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/e5c375a9-996f-4d68-a42d-c74ac524e976)
 
 ---
@@ -28,14 +30,14 @@ A modern, responsive ai chat application built with **React**, **Node.js**, and 
 
 ## 🛠️ Tech Stack
 
-**Frontend:**
+**Frontend(Deployed on Vercel):**
 - React (Vite)
 - Bootstrap 5 + Bootstrap Icons
 - Axios
 - Custom CSS transitions
 - React markdown
 
-**Backend:**
+**Backend(Deployed on DigitalOcean):**
 - Node.js / Express
 - OpenAI API (gpt-3.5-turbo)
 - CORS & Environment Config
