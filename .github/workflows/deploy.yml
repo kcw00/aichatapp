@@ -35,8 +35,8 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Deploy Frontend to Vercel
-        working-directory: frontend
         run: |
+          cd frontend
           npm install -g vercel
           npm install
           vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
