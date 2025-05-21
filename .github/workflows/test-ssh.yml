@@ -1,0 +1,21 @@
+name: Test SSH Access
+
+on:
+  workflow_dispatch:
+
+jobs:
+  debug-ssh:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Show SSH key fingerprint
+        run: |
+          echo "${{ secrets.DROPLET_SSH_KEY }}" > key.pem
+          chmod 600 key.pem
+          ssh-keygen -l -f key.pem || echo "Invalid key"
+
+      - name: Try connecting to Droplet
+        run: |
+          echo "${{ secrets.DROPLET_SSH_KEY }}" > key.pem
+          chmod 600 key.pem
+          ssh -o StrictHostKeyChecking=no -i key.pem root@${{ secrets.DROPLET_IP }} "echo ✅ SSH SUCCESS"
