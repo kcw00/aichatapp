@@ -12,41 +12,7 @@ Try it here: https://aichatapp-rho.vercel.app/
 
 ---
 
-## ✨ Features
-
-- 🔮 **GPT-3.5 Integration** via OpenAI API
-- 🌐 Backend hosted on **DigitalOcean**, frontend on **Vercel**
-- 🎨 **Responsive UI** with Bootstrap 5 & Bootstrap Icons
-- 🌙 **Dark/Light Mode** toggle
-- 📩 **Real-time chat UI** with message bubbles and icons
-- 🧭 **Collapsible Sidebar** with smooth transitions
-- 💬 **Markdown support** with:
-  - Inline code
-  - Syntax-highlighted code blocks with language labels
-  - Copy-to-clipboard buttons for code blocks
-- 🚀 **Proxy-enabled Backend Routing** via Vite
-- 🛡️ Secure API key handling with `.env`
-- ⚙️ Automated **CI/CD** pipeline using **GitHub Actions** for seamless deployment
-
----
-
-## 🛠️ Tech Stack
-
-**Frontend:**
-- React (Vite)
-- Bootstrap 5 + Bootstrap Icons
-- Axios
-- Custom CSS transitions
-- React markdown
-
-**Backend:**
-- Node.js / Express
-- OpenAI API (gpt-3.5-turbo)
-- CORS & Environment Config
-
----
-
-## ⚙️ Getting Started
+## ⚙️ Setup
 
 ### 🔧 Prerequisites
 - Node.js & npm
@@ -93,6 +59,40 @@ cd backend && npm run dev
 ```
 
 5. **Open http://localhost:5173 in your browser.**
+
+---
+
+## ✨ Features
+
+- 🔮 **GPT-3.5 Integration** via OpenAI API
+- 🌐 Backend hosted on **DigitalOcean**, frontend on **Vercel**
+- 🎨 **Responsive UI** with Bootstrap 5 & Bootstrap Icons
+- 🌙 **Dark/Light Mode** toggle
+- 📩 **Real-time chat UI** with message bubbles and icons
+- 🧭 **Collapsible Sidebar** with smooth transitions
+- 💬 **Markdown support** with:
+  - Inline code
+  - Syntax-highlighted code blocks with language labels
+  - Copy-to-clipboard buttons for code blocks
+- 🚀 **Proxy-enabled Backend Routing** via Vite
+- 🛡️ Secure API key handling with `.env`
+- ⚙️ Automated **CI/CD** pipeline using **GitHub Actions** for seamless deployment
+
+---
+
+## 🛠️ Tech Stack
+
+**Frontend:**
+- React (Vite)
+- Bootstrap 5 + Bootstrap Icons
+- Axios
+- Custom CSS transitions
+- React markdown
+
+**Backend:**
+- Node.js / Express
+- OpenAI API (gpt-3.5-turbo)
+- CORS & Environment Config
 
 ---
 
