@@ -8,6 +8,7 @@ export default defineConfig(({ mode }) => {
   console.log('VITE_BACKEND_URL =', env.VITE_BACKEND_URL)
 
   return { 
+    base: '/',
     plugins: [react()],
     server: {
       host: true,
