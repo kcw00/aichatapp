@@ -19,10 +19,10 @@ jobs:
       - name: SSH & Deploy
         run: |
           ssh -o StrictHostKeyChecking=no -i key.pem root@${{ secrets.DROPLET_IP }} << 'EOF'
-            cd /home/root/aichatapp/backend
+            cd /root/aichatapp/backend
             git pull origin main
             npm install
-            pm2 restart all
+            pm2 restart ai-chat-backend
           EOF
 
   frontend-deploy:
