@@ -20,8 +20,7 @@ const corsOptions = {
         'http://localhost:5173', // Local Vite dev server
         'http://127.0.0.1:5173',
         'https://aichatapp-rho.vercel.app', // Production Vercel frontend
-    ],
-    credentials: true
+    ]
 }
 app.use(cors(corsOptions)) // allow cross-origin requests
 app.use(express.static('dist')) // 'use this landing page' to the backend (express)
