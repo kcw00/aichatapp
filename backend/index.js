@@ -14,7 +14,18 @@ const app = express()
 // gpt-4o model does not exist -> try codes below to see my available models
 //const models = await openai.models.list()
 //console.log(models.data) // This will log all available models
-app.use(cors()) // allow cross-origin requests
+// Configure CORS to allow requests from both local and production frontends
+const corsOptions = {
+    origin: [
+        'http://localhost:5173', // Local Vite dev server
+        'http://127.0.0.1:5173',
+        'https://aichatapp-rho.vercel.app', // Production Vercel frontend
+    ],
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true
+}
+app.use(cors(corsOptions)) // allow cross-origin requests
 app.use(express.static('dist')) // 'use this landing page' to the backend (express)
 app.use(express.json())
 app.use(express.urlencoded({ extended: true })) // derive data that received from frontend
